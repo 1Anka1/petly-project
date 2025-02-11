@@ -1,19 +1,34 @@
+import AuthLink from '../AuthLink/AuthLink.jsx';
 import * as SC from './Navigation.styled.js';
 
 export default function Navigation() {
   return (
-    <nav>
-      <SC.List>
+    <SC.Nav>
+      <SC.Wrapper>
+        <SC.LogoText>
+          pe<span>t</span>ly
+        </SC.LogoText>
+        <SC.List>
+          <li>
+            <SC.StyleLink to="news">News</SC.StyleLink>
+          </li>
+          <li>
+            <SC.StyleLink to="search">Find pet</SC.StyleLink>
+          </li>
+          <li>
+            <SC.StyleLink to="friends">Our friends</SC.StyleLink>
+          </li>
+        </SC.List>
+      </SC.Wrapper>
+
+      <SC.AuthListWrapper>
         <li>
-          <SC.StyleLink to="news">News</SC.StyleLink>
+          <AuthLink path="login">Login</AuthLink>
         </li>
         <li>
-          <SC.StyleLink to="search">Find pet</SC.StyleLink>
+          <AuthLink path="regisration">Registration</AuthLink>
         </li>
-        <li>
-          <SC.StyleLink to="friends">Our friends</SC.StyleLink>
-        </li>
-      </SC.List>
-    </nav>
+      </SC.AuthListWrapper>
+    </SC.Nav>
   );
 }

@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #f59256;
+  --background-color: #fdf7f2;
+  --light-color: #ffffff;
+  --search-text-color: #535353;
+  --primary-text-color: #111111;
+  --primary-font: 'Manrope', sans-serif;
+  --secondary-font: 'Poppins', serif;
+  --logo-font: 'Inter', serif;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
