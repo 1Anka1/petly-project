@@ -4,7 +4,6 @@ import Container from '../../components/Layout/Layout.styled';
 export const NewsContainer = styled(Container)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding-top: 60px;
   justify-items: center;
 `;
 

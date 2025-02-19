@@ -1,3 +1,9 @@
+import Title from '../../components/Title/Title';
+
 export default function Friends() {
-  return <div>Friends!</div>;
+  return (
+    <>
+      <Title>Our Friends</Title>
+    </>
+  );
 }
