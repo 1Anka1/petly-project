@@ -1,12 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation';
+import Header from '../Header/Header.jsx';
 
 export default function Layout() {
   return (
     <>
-      <header>
-        <Navigation />
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>

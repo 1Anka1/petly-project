@@ -5,7 +5,6 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 16px;
 `;
 
 export const LogoText = styled.p`
@@ -23,9 +22,11 @@ export const List = styled.ul`
   gap: 80px;
 `;
 
-export const StyleLink = styled(NavLink)``;
+export const StyleLink = styled(NavLink)`
+  cursor: pointer;
+`;
 
-export const Wrapper = styled.div`
+export const FrexWrapper = styled.div`
   display: flex;
   align-items: center;
 `;

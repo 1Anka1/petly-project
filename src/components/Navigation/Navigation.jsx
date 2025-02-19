@@ -4,9 +4,12 @@ import * as SC from './Navigation.styled.js';
 export default function Navigation() {
   return (
     <SC.Nav>
-      <SC.Wrapper>
+      <SC.FrexWrapper>
         <SC.LogoText>
-          pe<span>t</span>ly
+          <SC.StyleLink to="/">
+            {' '}
+            pe<span>t</span>ly
+          </SC.StyleLink>
         </SC.LogoText>
         <SC.List>
           <li>
@@ -19,7 +22,7 @@ export default function Navigation() {
             <SC.StyleLink to="friends">Our friends</SC.StyleLink>
           </li>
         </SC.List>
-      </SC.Wrapper>
+      </SC.FrexWrapper>
 
       <SC.AuthListWrapper>
         <li>
