@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import Container from '../../components/Layout/Layout.styled';
 
-export const NewsContainer = styled(Container)`
+export const PageContainer = styled(Container)`
+  padding-top: 60px;
+`;
+
+export const NewsContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;

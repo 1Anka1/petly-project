@@ -1,30 +1,21 @@
-import { getNews } from '../../api/news-api';
 import * as SC from './News.styled';
-import { useState, useEffect, Fragment } from 'react';
 import Title from '../../components/Title/Title';
 import SearchFrom from '../../components/SearchForm/SearchForm';
+import useDataAPI from '../../utils/hooks/useDataAPI';
+import { getNews } from '../../api/news-api';
 
 export default function News() {
-  const [news, setNews] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getNews();
-      setNews(data);
-      console.log(data);
-    }
-    fetchData();
-  }, []);
+  const data = useDataAPI(getNews);
 
   return (
-    <Fragment>
+    <SC.PageContainer>
       <Title>News</Title>
       <SearchFrom />
       <SC.NewsContainer>
-        {news.map(({ webTitle, id, fields, webPublicationDate, webUrl }) => (
-          <Fragment key={id}>
+        {data.map(({ webTitle, id, webPublicationDate, webUrl, fields: { thumbnail } }) => (
+          <li key={id}>
             <SC.CardDetails>
-              <SC.ImgCard src={`${fields.thumbnail}`} />
+              <SC.ImgCard src={`${thumbnail}`} />
               <SC.CardTitle>{webTitle}</SC.CardTitle>
               <SC.Description>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur ea
@@ -38,9 +29,11 @@ export default function News() {
                 </SC.ReadMoreLink>
               </SC.DescriptionWrapper>
             </SC.CardDetails>
-          </Fragment>
+          </li>
         ))}
       </SC.NewsContainer>
-    </Fragment>
+    </SC.PageContainer>
   );
 }
+
+// винести окремі компоненти li and ul. => components: list / item

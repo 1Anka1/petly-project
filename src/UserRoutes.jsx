@@ -3,7 +3,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import News from './pages/News/News';
 import Friends from './pages/Friends/Friends';
-import Search from './pages/Search/Search';
+import PetSearch from './pages/PetSearch/PetSearch';
 
 function UserRoutes() {
   return (
@@ -11,7 +11,7 @@ function UserRoutes() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="news" element={<News />} />
-        <Route path="search" element={<Search />} />
+        <Route path="search" element={<PetSearch />} />
         <Route path="friends" element={<Friends />} />
       </Route>
     </Routes>
