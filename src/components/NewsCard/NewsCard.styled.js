@@ -1,17 +1,6 @@
 import styled from 'styled-components';
-import Container from '../../components/Layout/Layout.styled';
 
-export const PageContainer = styled(Container)`
-  padding-top: 60px;
-`;
-
-export const NewsContainer = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-`;
-
-export const CardDetails = styled.div`
+export const CardDetails = styled.li`
   position: relative;
   width: 345px;
   padding-bottom: 60px;
@@ -42,7 +31,7 @@ export const CardTitle = styled.h2`
   -webkit-box-orient: vertical;
 `;
 
-export const Description = styled.p`
+export const Paragraph = styled.p`
   font-size: 16px;
 `;
 

@@ -15,7 +15,7 @@ export const PetImgCard = styled.img`
   object-fit: cover;
 `;
 
-export const PetDescription = styled.div`
+export const WrapperDescription = styled.div`
   padding: 20px;
 `;
 

@@ -1,37 +1,38 @@
+import { NavLink } from 'react-router-dom';
 import AuthLink from '../AuthLink/AuthLink.jsx';
 import * as SC from './Navigation.styled.js';
 
 export default function Navigation() {
   return (
-    <SC.Nav>
-      <SC.FrexWrapper>
-        <SC.LogoText>
-          <SC.StyleLink to="/">
-            {' '}
+    <SC.NavBar>
+      <SC.NavContainer>
+        <SC.Logo>
+          <NavLink to="/">
             pe<span>t</span>ly
-          </SC.StyleLink>
-        </SC.LogoText>
-        <SC.List>
+          </NavLink>
+        </SC.Logo>
+
+        <SC.NavList>
           <li>
-            <SC.StyleLink to="news">News</SC.StyleLink>
+            <NavLink to="news">News</NavLink>
           </li>
           <li>
-            <SC.StyleLink to="search">Find pet</SC.StyleLink>
+            <NavLink to="search">Find pet</NavLink>
           </li>
           <li>
-            <SC.StyleLink to="friends">Our friends</SC.StyleLink>
+            <NavLink to="friends">Our friends</NavLink>
           </li>
-        </SC.List>
-      </SC.FrexWrapper>
+        </SC.NavList>
+      </SC.NavContainer>
 
       <SC.AuthListWrapper>
         <li>
           <AuthLink path="login">Login</AuthLink>
         </li>
         <li>
-          <AuthLink path="regisration">Registration</AuthLink>
+          <AuthLink path="registration">Registration</AuthLink>
         </li>
       </SC.AuthListWrapper>
-    </SC.Nav>
+    </SC.NavBar>
   );
 }

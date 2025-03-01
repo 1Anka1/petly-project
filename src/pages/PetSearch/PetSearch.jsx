@@ -1,16 +1,16 @@
 import Title from '../../components/Title/Title';
 import SearchForm from '../../components/SearchForm/SearchForm';
-import * as SC from './PetSearch.styled';
 import PetCard from '../../components/PetCard/PetCard';
+import { Section, CardWrapper } from '../../components/Layout/Layout.styled';
 
 export default function Search() {
   return (
-    <SC.PageContainer>
+    <Section>
       <Title>Find your favorite pet</Title>
       <SearchForm />
-      <SC.PetCardWrapper>
+      <CardWrapper>
         <PetCard> Outlet </PetCard>
-      </SC.PetCardWrapper>
-    </SC.PageContainer>
+      </CardWrapper>
+    </Section>
   );
 }

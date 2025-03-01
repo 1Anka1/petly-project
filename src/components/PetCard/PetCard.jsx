@@ -10,48 +10,40 @@ export default function PetCard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        data.map(
-          ({ name, gender, breeds: { primary }, id, primary_photo_cropped, age, species }) => (
-            <>
-              <SC.PetCardItem key={id}>
-                <SC.PetImgCard
-                  key={id}
-                  src={
-                    primary_photo_cropped
-                      ? primary_photo_cropped.small
-                      : '/images/No_Image_Available.jpg'
-                  }
-                  alt={name}
-                  width={300}
-                  height={300}
-                />
-                <SC.PetDescription>
-                  <SC.PetTitle>{`Cute ${species.toLowerCase()} looking for a home`}</SC.PetTitle>
-                  <SC.PetList>
-                    <SC.PetListItems>
-                      Breed: <span>{primary}</span>
-                    </SC.PetListItems>
-                    <SC.PetListItems>
-                      Gender: <span>{gender}</span>
-                    </SC.PetListItems>
-                    <SC.PetListItems>
-                      Age: <span>{age}</span>
-                    </SC.PetListItems>
-                  </SC.PetList>
-                  <SC.PetCardButton onClick={() => setIsModalOpen(true)}>
-                    Learn more
-                  </SC.PetCardButton>
-                </SC.PetDescription>
-              </SC.PetCardItem>
-              {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
-            </>
-          ),
-        )
+    <Loader isLoading={isLoading}>
+      {data.map(
+        ({ name, gender, breeds: { primary }, id, primary_photo_cropped, age, species }) => (
+          <SC.PetCardItem key={id}>
+            <SC.PetImgCard
+              key={id}
+              src={
+                primary_photo_cropped
+                  ? primary_photo_cropped.small
+                  : '/images/No_Image_Available.jpg'
+              }
+              alt={name}
+              width={300}
+              height={300}
+            />
+            <SC.WrapperDescription>
+              <SC.PetTitle>{`Cute ${species.toLowerCase()} looking for a home`}</SC.PetTitle>
+              <SC.PetList>
+                <SC.PetListItems>
+                  Breed: <span>{primary}</span>
+                </SC.PetListItems>
+                <SC.PetListItems>
+                  Gender: <span>{gender}</span>
+                </SC.PetListItems>
+                <SC.PetListItems>
+                  Age: <span>{age}</span>
+                </SC.PetListItems>
+              </SC.PetList>
+              <SC.PetCardButton onClick={() => setIsModalOpen(true)}>Learn more</SC.PetCardButton>
+            </SC.WrapperDescription>
+            {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
+          </SC.PetCardItem>
+        ),
       )}
-    </>
+    </Loader>
   );
 }

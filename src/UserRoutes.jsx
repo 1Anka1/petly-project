@@ -14,6 +14,7 @@ function UserRoutes() {
         <Route path="search" element={<PetSearch />} />
         <Route path="friends" element={<Friends />} />
       </Route>
+      {/* <Route path="*" element={<Error />} /> */}
     </Routes>
   );
 }

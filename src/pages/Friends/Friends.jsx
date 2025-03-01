@@ -1,10 +1,11 @@
+import { Section } from '../../components/Layout/Layout.styled';
 import Title from '../../components/Title/Title';
-import * as SC from './Friends.styled';
+// import * as SC from './Friends.styled';
 
 export default function Friends() {
   return (
-    <SC.PageContainer>
+    <Section>
       <Title>Our Friends</Title>
-    </SC.PageContainer>
+    </Section>
   );
 }

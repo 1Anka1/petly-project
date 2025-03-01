@@ -1,5 +1,6 @@
-import DotLoader from 'react-spinners/DotLoader';
+import BeatLoader from 'react-spinners/BeatLoader';
 
-export const Loader = () => {
-  return <DotLoader color={'#f59256'} />;
+// eslint-disable-next-line react/prop-types
+export const Loader = ({ isLoading, children }) => {
+  return isLoading ? <BeatLoader color={'#f59256'} /> : children;
 };
