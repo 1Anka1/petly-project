@@ -2,6 +2,10 @@
 @import './assets/styles/variables.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500&display=swap');
 
+.amplify-loader {
+  --amplify-components-loader-stroke-filled-color: var(--primary-color);
+}
+
 html {
   background-color: var(--background-color);
 }

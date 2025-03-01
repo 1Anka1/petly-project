@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PetCardWrapper = styled.div`
+export const PetCardItem = styled.li`
   display: flex;
   width: 280px;
   flex-direction: column;
@@ -35,7 +35,7 @@ export const PetListItems = styled.li`
   padding-bottom: 8px;
 `;
 
-export const PetCardButtone = styled.button`
+export const PetCardButton = styled.button`
   display: block;
   margin: 0 auto;
   width: 248px;

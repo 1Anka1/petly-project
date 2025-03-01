@@ -5,7 +5,7 @@ import useDataAPI from '../../utils/hooks/useDataAPI';
 import { getNews } from '../../api/news-api';
 
 export default function News() {
-  const data = useDataAPI(getNews);
+  const { data } = useDataAPI(getNews);
 
   return (
     <SC.PageContainer>

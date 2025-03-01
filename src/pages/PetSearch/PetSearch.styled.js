@@ -5,7 +5,7 @@ export const PageContainer = styled(Container)`
   padding-top: 60px;
 `;
 
-export const PetCardWrapper = styled.div`
+export const PetCardWrapper = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
