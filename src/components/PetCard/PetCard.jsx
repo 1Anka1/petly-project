@@ -1,13 +1,16 @@
 import { useState } from 'react';
-import { getAnimals } from '../../api/animals-api';
+import { getAnimals } from '../../api/petfinder-api';
 import useDataAPI from '../../utils/hooks/useDataAPI';
 import { Loader } from '../Loader/Loader';
 import * as SC from './PetCard.styled';
 import Modal from '../Modal/Modal';
+import { FavouriteButton } from '../FavouriteButton/FavouriteButton';
+import { useLocalStortage } from '../../utils/hooks/useLocalStorage';
 
 export default function PetCard() {
   const { data, isLoading } = useDataAPI(getAnimals);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [favourite, setFavourite] = useLocalStortage('id', []);
 
   return (
     <Loader isLoading={isLoading}>
@@ -38,6 +41,7 @@ export default function PetCard() {
                   Age: <span>{age}</span>
                 </SC.PetListItems>
               </SC.PetList>
+              <FavouriteButton id={id} favourite={favourite} setFavourite={setFavourite} />
               <SC.PetCardButton onClick={() => setIsModalOpen(true)}>Learn more</SC.PetCardButton>
             </SC.WrapperDescription>
             {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}

@@ -7,8 +7,8 @@ export default function News() {
   return (
     <Section>
       <Title>News</Title>
+      <SearchFrom />
       <Container>
-        <SearchFrom />
         <CardWrapper>
           <NewsCard>Outlet</NewsCard>
         </CardWrapper>

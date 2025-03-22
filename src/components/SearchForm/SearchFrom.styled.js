@@ -23,19 +23,18 @@ export const SearchInput = styled.input`
 export const SearchButton = styled.button`
   position: absolute;
   right: 10px;
-  width: 38px;
-  height: 38px;
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background-color: var(--light-color);
-  border-radius: 50%;
+  border-radius: 20px;
   cursor: pointer;
 
   &:hover {
     fill: var(--light-color);
     background-color: var(--primary-color);
-    transition: background-color 450ms var(--timing-function), fill 450ms var(--timing-function);
+    transition: background-color 350ms var(--timing-function), fill 350ms var(--timing-function);
   }
 `;

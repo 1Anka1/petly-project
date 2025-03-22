@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
+export const WrapperPetCard = styled.div``;
+
 export const PetCardItem = styled.li`
+  position: relative;
   display: flex;
   width: 280px;
   flex-direction: column;

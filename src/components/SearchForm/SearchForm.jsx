@@ -5,8 +5,8 @@ export default function SearchFrom() {
     <SC.SearchForm>
       <SC.SearchInput placeholder="Search" />
       <SC.SearchButton type="submit">
-        <svg>
-          <use href="/public/images/sprite.svg#search"></use>
+        <svg width="24" height="24">
+          <use href="/images/sprite.svg#search"></use>
         </svg>
       </SC.SearchButton>
     </SC.SearchForm>

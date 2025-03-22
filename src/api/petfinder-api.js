@@ -35,3 +35,19 @@ export async function getAnimals() {
     console.log(error);
   }
 }
+
+export async function getOrganizations() {
+  const token = await getAccessToken();
+
+  try {
+    const { data } = await getAnimalsAPI('v2/organizations', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data.organizations.splice(0, 9);
+  } catch (error) {
+    console.log(error);
+  }
+}
