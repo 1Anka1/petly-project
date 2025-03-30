@@ -1,9 +1,11 @@
+import PetSearch from './pages/PetSearch/PetSearch';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
-import Home from './pages/Home/Home';
-import News from './pages/News/News';
-import Friends from './pages/Friends/Friends';
-import PetSearch from './pages/PetSearch/PetSearch';
+
+const Home = lazy(() => import('./pages/Home/Home'));
+const News = lazy(() => import('./pages/News/News'));
+const Friends = lazy(() => import('./pages/Friends/Friends'));
 
 function UserRoutes() {
   return (

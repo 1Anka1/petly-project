@@ -2,6 +2,7 @@
 
 To do:
 -Read about Suspense and do lazy import
+-Create the Filter component 'favourite'
 
 Next Time:
 

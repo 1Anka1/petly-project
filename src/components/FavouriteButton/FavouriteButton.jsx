@@ -1,18 +1,24 @@
 /* eslint-disable react/prop-types */
+import { useDispatch, useSelector } from 'react-redux';
 import * as SC from './FavouriteButton.styled';
+import { getFavourites } from '../../redux/selectors';
+import { addToFavourite, deleteFromFavourite } from '../../redux/favouritesSlice/favouritesSlice';
 
-export function FavouriteButton({ setFavourite, id, favourite }) {
+export function FavouriteButton({ id }) {
+  const favourites = useSelector(getFavourites);
+  const dispatch = useDispatch();
+
   const handleClick = (id) => {
-    if (favourite.includes(id)) {
-      const filteredFavourite = favourite.filter((item) => item !== id);
-      setFavourite(filteredFavourite);
+    if (favourites.items.includes(id)) {
+      dispatch(deleteFromFavourite(id));
     } else {
-      setFavourite((prev) => [...prev, id]);
+      dispatch(addToFavourite(id));
     }
   };
+
   return (
     <SC.ButtonHeart onClick={() => handleClick(id)}>
-      {favourite.includes(id) ? (
+      {favourites.items.includes(id) ? (
         <svg width="28" height="28">
           <use href="/images/sprite.svg#favourite"></use>
         </svg>
