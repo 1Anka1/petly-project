@@ -8,7 +8,7 @@ export const Overlay = styled.div`
   right: 0;
   z-index: 20;
   overflow-y: auto;
-  backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(2px);
   padding: 8px;
 `;
 
@@ -29,8 +29,7 @@ export const Inner = styled.div`
   width: 90%;
 
   max-height: 90%;
-  border-radius: 35px;
-  border: 1px solid var(--primary-color);
+  border-radius: 40px;
 `;
 
 export const CloseBtn = styled.button`

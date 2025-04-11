@@ -14,13 +14,13 @@ export default function Navigation() {
 
         <SC.NavList>
           <li>
-            <NavLink to="news">News</NavLink>
+            <SC.NavigationLink to="news">News</SC.NavigationLink>
           </li>
           <li>
-            <NavLink to="search">Find pet</NavLink>
+            <SC.NavigationLink to="search">Find pet</SC.NavigationLink>
           </li>
           <li>
-            <NavLink to="friends">Our friends</NavLink>
+            <SC.NavigationLink to="friends">Our friends</SC.NavigationLink>
           </li>
         </SC.NavList>
       </SC.NavContainer>

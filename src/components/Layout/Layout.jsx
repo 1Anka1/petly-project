@@ -8,7 +8,7 @@ export default function Layout() {
     <>
       <Header />
       <main>
-        <Suspense fallback={AppLoader}>
+        <Suspense fallback={<AppLoader />}>
           <Outlet />
         </Suspense>
       </main>

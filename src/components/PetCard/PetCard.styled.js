@@ -47,7 +47,7 @@ export const PetCardButton = styled.button`
   font-size: 16px;
   color: var(--primary-color);
   cursor: pointer;
-  border-radius: 35px;
+  border-radius: 40px;
   border: 1px solid var(--primary-color);
   background-color: var(--light-color);
 `;

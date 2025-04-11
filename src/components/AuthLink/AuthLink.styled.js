@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   padding: 10px 28px;
   font-size: 20px;
   cursor: pointer;
-  border-radius: 35px;
+  border-radius: 40px;
   border: 1px solid var(--primary-color);
   background-color: var(--light-color);
 
@@ -13,5 +13,10 @@ export const StyledLink = styled(Link)`
     color: var(--light-color);
     background: var(--primary-color);
     transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
+  }
+
+  &.active {
+    color: var(--light-color);
+    background-color: var(--primary-color);
   }
 `;

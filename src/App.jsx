@@ -4,7 +4,7 @@ import { AppLoader } from './components/AppLoader/AppLoader';
 
 function App() {
   return (
-    <Suspense fallback={AppLoader}>
+    <Suspense fallback={<AppLoader />}>
       <UserRoutes />
     </Suspense>
   );

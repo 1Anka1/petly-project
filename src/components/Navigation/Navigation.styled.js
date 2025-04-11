@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 `;
 
 export const Logo = styled.p`
@@ -29,4 +29,23 @@ export const NavContainer = styled.div`
 
 export const AuthListWrapper = styled(NavList)`
   gap: 20px;
+`;
+
+export const NavigationLink = styled(NavLink)`
+  font-size: 20px;
+
+  &.active {
+    position: relative;
+    color: var(--primary-color);
+  }
+
+  &.active::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+  }
 `;

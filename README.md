@@ -1,12 +1,11 @@
 # React + Vite
 
 To do:
--Read about Suspense and do lazy import
+-React Hooks Form
 -Create the Filter component 'favourite'
 
-Next Time:
-
-- Redux
+Help:
+-height Login Containe
 
 Design : https://www.figma.com/design/s3Cf2uc8WrtrlT3V6miD1m/Pet-support-GoIT?node-id=25-359
 
