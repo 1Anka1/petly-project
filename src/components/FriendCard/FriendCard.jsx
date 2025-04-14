@@ -9,8 +9,7 @@ export default function FriendCard() {
   return (
     <Loader isLoading={isLoading}>
       {data.map(({ id, name, phone, address, email, photos = [] }) => {
-        const partnerPhoto =
-          photos.length > 0 ? photos[0].small : '/public/images/No_Image_Available.jpg';
+        const partnerPhoto = photos.length > 0 ? photos[0].small : '/images/No_Image_Available.jpg';
         const title = (name) => name.split(' ').slice(0, 4).join(' ');
 
         return (

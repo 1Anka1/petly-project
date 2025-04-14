@@ -1,32 +1,25 @@
 // import { useState } from 'react';
 import * as SC from './LoginFrom.styled';
 import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 export default function LoginForm() {
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-
-  // const handleChange = ({ target: { name } }) => {
-  //   switch (name) {
-  //     case 'email':
-  //       console.log(name, 'Name');
-
-  //       break;
-  //     case 'password':
-  //       console.log(name);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
+  const userSchema = yup.object({
+    email: yup.string().email('Invalide').required(),
+    password: yup.number().required().positive().integer(),
+  });
 
   const { register, handleSubmit, formState, reset } = useForm({
+    resolver: yupResolver(userSchema),
     mode: 'onChange',
   });
 
   const onSubmit = (data) => {
     console.log(data);
     reset();
+    //check password here user -> include [users]
+    //dispatch -> true --- false
   };
 
   const errorEmail = formState.errors['email']?.message;
@@ -35,39 +28,26 @@ export default function LoginForm() {
   return (
     <SC.Form onSubmit={handleSubmit(onSubmit)}>
       <SC.FormTitle>Login</SC.FormTitle>
-      <SC.Input
-        placeholder="Email"
-        type="email"
-        name="email"
-        // onChange={handleChange}
-        {...register('email', {
-          required: true,
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: 'Invalid email address',
-          },
-        })}
-      />
-      {errorEmail && <p>Invalid email address</p>}
-
-      <SC.Input
-        type="text"
-        name="password"
-        placeholder="Password"
-        // value={password}
-        // onChange={handleChange}
-        {...register('password', {
-          required: true,
-          minLength: {
-            value: 8,
-          },
-          pattern: {
-            value: [/[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/],
-            message: 'Must include lower, upper, number, and special chars',
-          },
-        })}
-      />
-      {errorPassword && <p>Must include lower, upper, number, and special chars</p>}
+      <div>
+        <SC.Input
+          placeholder="Email"
+          type="email"
+          name="email"
+          error={errorEmail}
+          {...register('email')}
+        />
+        <p>{errorEmail}</p>
+      </div>
+      <div>
+        <SC.Input
+          type="text"
+          name="password"
+          placeholder="Password"
+          error={errorPassword}
+          {...register('password')}
+        />
+        {errorPassword && <p>{errorPassword}</p>}
+      </div>
 
       <SC.LoginButton type="submit">Login</SC.LoginButton>
       <SC.FormText>

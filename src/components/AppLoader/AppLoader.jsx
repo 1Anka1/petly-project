@@ -1,5 +1,15 @@
 import BeatLoader from 'react-spinners/BeatLoader';
 
 export const AppLoader = () => {
-  return <BeatLoader color={'#f59256'} />;
+  return (
+    <BeatLoader
+      cssOverride={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 'calc(100vh - 200px)',
+      }}
+      color={'#f59256'}
+    />
+  );
 };

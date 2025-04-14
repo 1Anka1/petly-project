@@ -2,6 +2,8 @@ import PetSearch from './pages/PetSearch/PetSearch';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
+import PublicRoute from './components/AuthRoutes/PublicRoute';
+import PrivateRoute from './components/AuthRoutes/PrivateRoute';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const News = lazy(() => import('./pages/News/News'));
@@ -14,11 +16,17 @@ function UserRoutes() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+
+        <Route path="" element={<PublicRoute />}>
+          <Route path="login" element={<Login />} />
+          <Route path="registration" element={<Registration />} />
+        </Route>
+
+        <Route path="" element={<PrivateRoute />}>
+          <Route path="search" element={<PetSearch />} />
+          <Route path="friends" element={<Friends />} />
+        </Route>
         <Route path="news" element={<News />} />
-        <Route path="search" element={<PetSearch />} />
-        <Route path="friends" element={<Friends />} />
-        <Route path="login" element={<Login />} />
-        <Route path="registration" element={<Registration />} />
       </Route>
       {/* <Route path="*" element={<Error />} /> */}
     </Routes>

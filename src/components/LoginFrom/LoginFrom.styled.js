@@ -19,7 +19,9 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  border: 1px solid var(--primary-color);
+  border: 1px solid;
+  border-color: ${(props) => (props.error ? 'red' : 'var(--primary-color)')};
+
   background-color: var(--background-color);
   opacity: 0.6;
   border-radius: 40px;
