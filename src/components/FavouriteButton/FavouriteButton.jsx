@@ -6,6 +6,7 @@ import { addToFavourite, deleteFromFavourite } from '../../redux/favouritesSlice
 
 export function FavouriteButton({ id }) {
   const favourites = useSelector(getFavourites);
+
   const dispatch = useDispatch();
 
   const handleClick = (id) => {

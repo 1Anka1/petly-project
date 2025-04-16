@@ -2,25 +2,35 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FormTitle = styled.h2`
+  text-align: center;
   font-size: 36px;
   font-weight: 500;
   letter-spacing: 1.5px;
 `;
 
 export const Form = styled.form`
-  text-align: center;
   background-color: var(--light-color);
   padding: 60px 80px;
   border-radius: 40px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   display: grid;
-  gap: 40px;
+  gap: 35px;
   width: 600px;
+`;
+
+export const InputWrapper = styled.div`
+  display: grid;
+  gap: 10px;
+`;
+
+export const InputMessage = styled.p`
+  color: var(--warning-color);
+  margin-left: 20px;
 `;
 
 export const Input = styled.input`
   border: 1px solid;
-  border-color: ${(props) => (props.error ? 'red' : 'var(--primary-color)')};
+  border-color: ${(props) => (props.error ? 'var(--warning-color)' : 'var(--primary-color)')};
 
   background-color: var(--background-color);
   opacity: 0.6;

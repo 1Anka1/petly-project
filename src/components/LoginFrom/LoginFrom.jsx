@@ -3,10 +3,13 @@ import * as SC from './LoginFrom.styled';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from '../../redux/selectors';
+import { logIn } from '../../redux/userSlice/userSlice';
 
 export default function LoginForm() {
   const userSchema = yup.object({
-    email: yup.string().email('Invalide').required(),
+    email: yup.string().email('enter a valid Email').required(),
     password: yup.number().required().positive().integer(),
   });
 
@@ -15,8 +18,13 @@ export default function LoginForm() {
     mode: 'onChange',
   });
 
+  const user = useSelector(getUser);
+  console.log(user);
+
+  const dispatch = useDispatch();
+
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(logIn(data));
     reset();
     //check password here user -> include [users]
     //dispatch -> true --- false
@@ -28,7 +36,7 @@ export default function LoginForm() {
   return (
     <SC.Form onSubmit={handleSubmit(onSubmit)}>
       <SC.FormTitle>Login</SC.FormTitle>
-      <div>
+      <SC.InputWrapper>
         <SC.Input
           placeholder="Email"
           type="email"
@@ -36,9 +44,9 @@ export default function LoginForm() {
           error={errorEmail}
           {...register('email')}
         />
-        <p>{errorEmail}</p>
-      </div>
-      <div>
+        <SC.InputMessage>{errorEmail}</SC.InputMessage>
+      </SC.InputWrapper>
+      <SC.InputWrapper>
         <SC.Input
           type="text"
           name="password"
@@ -46,8 +54,8 @@ export default function LoginForm() {
           error={errorPassword}
           {...register('password')}
         />
-        {errorPassword && <p>{errorPassword}</p>}
-      </div>
+        <SC.InputMessage>{errorPassword}</SC.InputMessage>
+      </SC.InputWrapper>
 
       <SC.LoginButton type="submit">Login</SC.LoginButton>
       <SC.FormText>

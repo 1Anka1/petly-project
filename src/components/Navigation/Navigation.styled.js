@@ -49,3 +49,12 @@ export const NavigationLink = styled(NavLink)`
     background-color: var(--primary-color);
   }
 `;
+
+export const LogOut = styled.button`
+  padding: 10px 28px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 40px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--light-color);
+`;
