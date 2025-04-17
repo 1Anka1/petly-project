@@ -3,9 +3,9 @@ import * as SC from './LoginFrom.styled';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUser } from '../../redux/selectors';
+import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/userSlice/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
   const userSchema = yup.object({
@@ -18,16 +18,14 @@ export default function LoginForm() {
     mode: 'onChange',
   });
 
-  const user = useSelector(getUser);
-  console.log(user);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     dispatch(logIn(data));
     reset();
+    navigate('/profile', { replace: true });
     //check password here user -> include [users]
-    //dispatch -> true --- false
   };
 
   const errorEmail = formState.errors['email']?.message;

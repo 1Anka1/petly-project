@@ -35,7 +35,7 @@ export default function Navigation() {
         {user.isLogged ? (
           <>
             <li>
-              <AuthLink path="">Account</AuthLink>
+              <AuthLink path="profile">Account</AuthLink>
             </li>
             <SC.LogOut type="button" onClick={() => dispatch(logOut())}>
               Log out

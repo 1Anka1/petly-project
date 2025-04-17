@@ -10,6 +10,7 @@ const News = lazy(() => import('./pages/News/News'));
 const Friends = lazy(() => import('./pages/Friends/Friends'));
 const Login = lazy(() => import('./pages/Login/Login'));
 const Registration = lazy(() => import('./pages/Registration/Registration'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
 
 function UserRoutes() {
   return (
@@ -25,6 +26,7 @@ function UserRoutes() {
         <Route path="" element={<PrivateRoute />}>
           <Route path="search" element={<PetSearch />} />
           <Route path="friends" element={<Friends />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
         <Route path="news" element={<News />} />
       </Route>
