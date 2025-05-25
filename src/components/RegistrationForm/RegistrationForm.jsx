@@ -1,9 +1,21 @@
 // import { useState } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as SC from '../LoginFrom/LoginFrom.styled';
 import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 
 export default function RegistrationForm() {
+  const basicSchema = yup.object().shape({
+    email: yup.string().email('please enter a valid email').required('Required'),
+    password: yup.number().required().positive().integer().required('Required'),
+    confirmPassword: yup
+      .number()
+      .oneOf([yup.ref('password'), null], 'Passwords must match')
+      .required('Required'),
+  });
+
   const { register, handleSubmit, reset } = useForm({
+    resolver: yupResolver(basicSchema),
     mode: 'onChange',
   });
 

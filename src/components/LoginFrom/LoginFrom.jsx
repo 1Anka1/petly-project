@@ -8,9 +8,9 @@ import { logIn } from '../../redux/userSlice/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
-  const userSchema = yup.object({
-    email: yup.string().email('enter a valid Email').required(),
-    password: yup.number().required().positive().integer(),
+  const userSchema = yup.object().shape({
+    email: yup.string().email('please enter a valid email').required('Required'),
+    password: yup.number().required().positive().integer().required('Required'),
   });
 
   const { register, handleSubmit, formState, reset } = useForm({

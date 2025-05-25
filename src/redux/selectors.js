@@ -1,2 +1,2 @@
 export const getFavourites = (state) => state.favourites;
-export const getUser = (state) => state.user;
+export const getUser = (state) => state.user; ///made separate states
