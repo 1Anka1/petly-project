@@ -1,4 +1,30 @@
-# React + Vite
+ # 🐾 Petly
+Petly is a pet adoption platform built with React + Vite.
+Users can read animal-related news and register/login to manage their profile.
+
+
+🔧 Tech Stack
+- React 19, Vite
+- React Router DOM
+- React Hook Form + Yup
+- Redux Toolkit + Redux Persist
+- Styled Components
+- React Spinners
+- Axios, dotenv
+
+✅ Features
+📰 News feed about animals
+👤 Controlled login & registration
+🛠 Form validation with Yup
+💾 Persistent user state
+
+Coming soon:
+🔍 Pet search
+🧼 Responsive design
+🐾 Favorites pet
+🛒 Modal card with details & add to cart 
+🔍 Filter by favorites
+
 
 Help:
 Design : https://www.figma.com/design/s3Cf2uc8WrtrlT3V6miD1m/Pet-support-GoIT?node-id=25-359
