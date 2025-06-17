@@ -13,17 +13,17 @@ Users can read animal-related news and register/login to manage their profile.
 - Axios, dotenv
 
 ✅ Features
-📰 News feed about animals
-👤 Controlled login & registration
-🛠 Form validation with Yup
-💾 Persistent user state
+- 📰 News feed about animals
+- 👤 Controlled login & registration
+- 🛠 Form validation with Yup
+- 💾 Persistent user state
 
 Coming soon:
-🔍 Pet search
-🧼 Responsive design
-🐾 Favorites pet
-🛒 Modal card with details & add to cart 
-🔍 Filter by favorites
+- 🔍 Pet search
+- 🧼 Responsive design
+- 🐾 Favorites pet
+- 🛒 Modal card with details & add to cart
+- 🔍 Filter by favorites
 
 
 Help:
